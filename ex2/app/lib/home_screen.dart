@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:app/model/comment_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -12,20 +10,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //named list
-  List<CommentModel> comList = [];
-  //future fun
-  Future<List<CommentModel>> getComment() async {
-    final response = await http.get(
-        Uri.parse('https://jsonplaceholder.typicode.com/posts/1/comments'));
-    var data = jsonDecode(response.body.toString());
+  var data;
+  Future<void> getUser() async {
+    final response =
+        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
+
     if (response.statusCode == 200) {
-      for (Map i in data) {
-        comList.add(CommentModel.fromJson(i));
-      }
-      return comList;
+      data = jsonDecode(response.body.toString());
     } else {
-      return comList;
+      print("error");
     }
   }
 
@@ -33,10 +26,84 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("API Integration"),
+        title: const Text("Complex Api Without JSON Model"),
+        backgroundColor: Colors.grey[300],
       ),
-      body: const Column(
-        children: [],
+      body: Column(
+        children: [
+          Expanded(
+            child: FutureBuilder(
+              future: getUser(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                    child: Text("Loadding...."),
+                  );
+                } else {
+                  return ListView.builder(
+                    itemCount: data.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        child: Column(
+                          children: [
+                            ReuseRow(
+                              title: 'name',
+                              value: data[index]['name'].toString(),
+                            ),
+                            ReuseRow(
+                              title: 'username',
+                              value: data[index]['username'].toString(),
+                            ),
+                            ReuseRow(
+                              title: 'Zip-Code',
+                              value:
+                                  data[index]['address']['zipcode'].toString(),
+                            ),
+                            ReuseRow(
+                              title: 'geo',
+                              value: data[index]['address']['geo'].toString(),
+                            ),
+                            ReuseRow(
+                              title: 'email',
+                              value: data[index]['email'].toString(),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                }
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ReuseRow extends StatelessWidget {
+  final String title;
+  final String value;
+  const ReuseRow({super.key, required this.title, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(fontSize: 20, color: Colors.blue),
+          ),
+          Text(
+            value,
+            style: const TextStyle(fontSize: 20, color: Colors.purple),
+          ),
+        ],
       ),
     );
   }
