@@ -13,10 +13,7 @@
 </tr>
 
 <tr>
-<td valign="top"><img src="https://github.com/suraj-khot-19/img/blob/main/ex4.png" alt="see "></td>  
-
   <td valign="top"><img src="https://github.com/suraj-khot-19/img/blob/main/ezgif-2-d82a207fdf.gif" alt="see "></td>  
-
 </tr>
 
 <tr>
