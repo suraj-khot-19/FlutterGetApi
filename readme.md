@@ -47,5 +47,10 @@ Import it
 Now in your Dart code, you can use:
 
 import 'package:http/http.dart' as http;
+<ul>
+  <li> use jsonDecoder(); to decode the json data</li>
+  <li>variable.body.toString(); to print data</li>
+</ul>
+
 
 </p>
