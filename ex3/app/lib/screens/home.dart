@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text("Api Integration 2"),
+          child: Text("Api Integration 3"),
         ),
       ),
       body: Column(

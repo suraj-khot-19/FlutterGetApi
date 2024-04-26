@@ -3,7 +3,7 @@
 </p>
 <table align="center">
 <tr>
-<td valign="top"><img src="https://github.com/suraj-khot-19/img/blob/main/img5.png" alt="see "></td>  
+<td valign="top"><img src="https://github.com/suraj-khot-19/img/blob/main/ex1.png" alt="see "></td>  
 
 </tr>
 <tr>
