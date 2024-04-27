@@ -1,4 +1,5 @@
 <table align="center">
+
 <tr>
   <td valign="top"><img src="https://github.com/suraj-khot-19/img/blob/main/img5.png" alt="see "></td>  
 
@@ -11,7 +12,12 @@
 
   <td valign="top"><img src="https://github.com/suraj-khot-19/img/blob/main/ex3.png" alt="see "></td>  
 </tr>
+<tr>
+  <td valign="top"><img src="https://github.com/suraj-khot-19/img/blob/main/ex5.png" alt="see "></td>  
 
+  <!-- <td valign="top"><img src="https://github.com/suraj-khot-19/img/blob/main/ex5.png" alt="see "></td>   -->
+
+</tr>
 <tr>
   <td valign="top"><img src="https://github.com/suraj-khot-19/img/blob/main/ezgif-2-d82a207fdf.gif" alt="see "></td>  
 </tr>
@@ -27,7 +33,9 @@
 <tr>
  <td valign="top"><img src="https://github.com/suraj-khot-19/img/blob/main/ezgif-2-41e615db56.gif" alt="see "></td>  
 </tr>
-
+<tr>
+  <td valign="top"><img src="https://github.com/suraj-khot-19/img/blob/main/ex5.gif" alt="see "></td>   
+</tr>
 </table>
 
 <p>
